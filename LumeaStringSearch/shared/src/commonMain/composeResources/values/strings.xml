@@ -1,0 +1,15 @@
+<resources>
+
+    <string name="header">String Library</string>
+    <string name="description">Search and explore in-app strings</string>
+    <string name="search_placeholder">Search by text, key or screen...</string>
+    <string name="platform">PLATFORM</string>
+    <string name="results">Results</string>
+    <string name="collection">Collection</string>
+    <string name="no_results_found">No strings found</string>
+    <string name="try_another_search">Try another search term</string>
+    <string name="all_platform">All</string>
+    <string name="android_platform">Android</string>
+    <string name="iOS_platform">iOS</string>
+
+</resources>
