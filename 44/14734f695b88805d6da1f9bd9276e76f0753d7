@@ -1,0 +1,128 @@
+LumeaStringSearch/.gitignore
+  h_e8a94bae6c733a 1-19
+LumeaStringSearch/README.md
+  h_e8a94bae6c733a 1-35
+LumeaStringSearch/androidApp/build.gradle.kts
+  h_e8a94bae6c733a 1-54
+LumeaStringSearch/androidApp/proguard-rules.pro
+  h_e8a94bae6c733a 1-21
+LumeaStringSearch/androidApp/src/main/AndroidManifest.xml
+  h_e8a94bae6c733a 1-22
+LumeaStringSearch/androidApp/src/main/kotlin/com/example/lumeastringsearch/MainActivity.kt
+  h_e8a94bae6c733a 1-25
+LumeaStringSearch/androidApp/src/main/res/drawable-v24/ic_launcher_foreground.xml
+  h_e8a94bae6c733a 1-30
+LumeaStringSearch/androidApp/src/main/res/drawable/ic_launcher_background.xml
+  h_e8a94bae6c733a 1-170
+LumeaStringSearch/androidApp/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+  h_e8a94bae6c733a 1-5
+LumeaStringSearch/androidApp/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+  h_e8a94bae6c733a 1-5
+LumeaStringSearch/androidApp/src/main/res/values/strings.xml
+  h_e8a94bae6c733a 1-3
+LumeaStringSearch/build.gradle.kts
+  h_e8a94bae6c733a 1-11
+LumeaStringSearch/desktopApp/build.gradle.kts
+  h_e8a94bae6c733a 1-28
+LumeaStringSearch/desktopApp/src/main/kotlin/com/example/lumeastringsearch/main.kt
+  h_e8a94bae6c733a 1-13
+LumeaStringSearch/gradle.properties
+  h_e8a94bae6c733a 1-12
+LumeaStringSearch/gradle/gradle-daemon-jvm.properties
+  h_e8a94bae6c733a 1-13
+LumeaStringSearch/gradle/libs.versions.toml
+  h_e8a94bae6c733a 1-47
+LumeaStringSearch/gradle/wrapper/gradle-wrapper.properties
+  h_e8a94bae6c733a 1-10
+LumeaStringSearch/gradlew
+  h_e8a94bae6c733a 1-248
+LumeaStringSearch/gradlew.bat
+  h_e8a94bae6c733a 1-82
+LumeaStringSearch/iosApp/Configuration/Config.xcconfig
+  h_e8a94bae6c733a 1-7
+LumeaStringSearch/iosApp/iosApp.xcodeproj/project.pbxproj
+  h_e8a94bae6c733a 1-373
+LumeaStringSearch/iosApp/iosApp.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+  h_e8a94bae6c733a 1-7
+LumeaStringSearch/iosApp/iosApp/Assets.xcassets/AccentColor.colorset/Contents.json
+  h_e8a94bae6c733a 1-11
+LumeaStringSearch/iosApp/iosApp/Assets.xcassets/AppIcon.appiconset/Contents.json
+  h_e8a94bae6c733a 1-36
+LumeaStringSearch/iosApp/iosApp/Assets.xcassets/Contents.json
+  h_e8a94bae6c733a 1-6
+LumeaStringSearch/iosApp/iosApp/ContentView.swift
+  h_e8a94bae6c733a 1-18
+LumeaStringSearch/iosApp/iosApp/Info.plist
+  h_e8a94bae6c733a 1-8
+"LumeaStringSearch/iosApp/iosApp/Preview Content/Preview Assets.xcassets/Contents.json"
+  h_e8a94bae6c733a 1-6
+LumeaStringSearch/iosApp/iosApp/iOSApp.swift
+  h_e8a94bae6c733a 1-10
+LumeaStringSearch/settings.gradle.kts
+  h_e8a94bae6c733a 1-36
+LumeaStringSearch/shared/build.gradle.kts
+  h_e8a94bae6c733a 1-69
+LumeaStringSearch/shared/src/androidHostTest/kotlin/com/example/lumeastringsearch/SharedLogicAndroidHostTest.kt
+  h_e8a94bae6c733a 1-12
+LumeaStringSearch/shared/src/androidMain/kotlin/com/example/lumeastringsearch/Platform.android.kt
+  h_e8a94bae6c733a 1-9
+LumeaStringSearch/shared/src/commonMain/composeResources/drawable/compose-multiplatform.xml
+  h_e8a94bae6c733a 1-44
+LumeaStringSearch/shared/src/commonMain/composeResources/values/strings.xml
+  h_e8a94bae6c733a 1-15
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/App.kt
+  h_e8a94bae6c733a 1-21
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/Greeting.kt
+  h_e8a94bae6c733a 1-9
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/GreetingUtil.kt
+  h_e8a94bae6c733a 1-4
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/Platform.kt
+  h_e8a94bae6c733a 1-7
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/data/StringRepository.kt
+  h_e8a94bae6c733a 1-16
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/data/StringRepositoryImpl.kt
+  h_e8a94bae6c733a 1-16
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/features/searchscreen/SearchViewModel.kt
+  h_e8a94bae6c733a 1-18
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/features/searchscreen/domain/SearchStringsUseCase.kt
+  h_e8a94bae6c733a 1-16
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/features/searchscreen/domain/model/ScreenModel.kt
+  h_e8a94bae6c733a 1-65
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/features/searchscreen/ui/FilterTag.kt
+  h_e8a94bae6c733a 1-146
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/features/searchscreen/ui/SearchScreen.kt
+  h_e8a94bae6c733a 1-108
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/features/searchscreen/ui/StringCollectionCard.kt
+  h_e8a94bae6c733a 1-96
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/features/stringdetail/StringDetailScreen.kt
+  h_e8a94bae6c733a 1-56
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/navigation/AppNavHost.kt
+  h_e8a94bae6c733a 1-46
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/navigation/Route.kt
+  h_e8a94bae6c733a 1-26
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/util/StringExt.kt
+  h_e8a94bae6c733a 1-18
+LumeaStringSearch/shared/src/commonTest/kotlin/com/example/lumeastringsearch/SharedCommonTest.kt
+  h_e8a94bae6c733a 1-12
+LumeaStringSearch/shared/src/iosMain/kotlin/com/example/lumeastringsearch/MainViewController.kt
+  h_e8a94bae6c733a 1-5
+LumeaStringSearch/shared/src/iosMain/kotlin/com/example/lumeastringsearch/Platform.ios.kt
+  h_e8a94bae6c733a 1-9
+LumeaStringSearch/shared/src/iosTest/kotlin/com/example/lumeastringsearch/SharedLogicIOSTest.kt
+  h_e8a94bae6c733a 1-12
+LumeaStringSearch/shared/src/jvmMain/kotlin/com/example/lumeastringsearch/Platform.jvm.kt
+  h_e8a94bae6c733a 1-7
+LumeaStringSearch/shared/src/jvmTest/kotlin/com/example/lumeastringsearch/SharedLogicDesktopTest.kt
+  h_e8a94bae6c733a 1-12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "4414734f695b88805d6da1f9bd9276e76f0753d7",
+  "prompts": {},
+  "humans": {
+    "h_e8a94bae6c733a": {
+      "author": "Nishu <nishu.yadav@philips.com>"
+    }
+  }
+}
