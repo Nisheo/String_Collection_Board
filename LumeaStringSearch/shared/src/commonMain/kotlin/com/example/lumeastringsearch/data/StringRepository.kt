@@ -7,6 +7,7 @@
 package com.example.lumeastringsearch.data
 
 import com.example.lumeastringsearch.data.model.AppString
+import com.example.lumeastringsearch.data.model.PlatformFilter
 import kotlinx.coroutines.flow.Flow
 
 /**
@@ -17,7 +18,7 @@ import kotlinx.coroutines.flow.Flow
  * Description      : Initial version
  */
 interface StringRepository {
-    fun searchStringsFiltered(query: String, platformFilter: String): Flow<List<AppString>>
+    fun searchStringsFiltered(query: String, platformFilter: PlatformFilter): Flow<List<AppString>>
 
     suspend fun getStringByKey(key: String): AppString?
 }

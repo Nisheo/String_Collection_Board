@@ -6,9 +6,23 @@ plugins {
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.kotlinSerialization)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.room)
+}
+
+room3 {
+    schemaDirectory("$projectDir/schemas")
+}
+
+compose.resources {
+    publicResClass = true
 }
 
 kotlin {
+    compilerOptions {
+        freeCompilerArgs.add("-Xexpect-actual-classes")
+    }
+
     listOf(
         iosArm64(),
         iosSimulatorArm64()
@@ -49,6 +63,7 @@ kotlin {
             // Android-only artifact (AAR): it publishes no common/jvm/native variants,
             // so it must not live in commonMain or the JVM and iOS targets fail to resolve.
             implementation(libs.androidx.room3.sqlite.wrapper)
+            implementation(libs.koin.android)
         }
         jvmMain.dependencies {
             implementation(libs.kotlinx.coroutinesSwing)
@@ -76,5 +91,11 @@ kotlin {
 }
 
 dependencies {
+    // One entry per target — KSP does not fan out across KMP targets automatically
+    add("kspAndroid", libs.androidx.room3.compiler)
+    add("kspJvm", libs.androidx.room3.compiler)
+    add("kspIosArm64", libs.androidx.room3.compiler)
+    add("kspIosSimulatorArm64", libs.androidx.room3.compiler)
+
     androidRuntimeClasspath(libs.compose.uiTooling)
 }

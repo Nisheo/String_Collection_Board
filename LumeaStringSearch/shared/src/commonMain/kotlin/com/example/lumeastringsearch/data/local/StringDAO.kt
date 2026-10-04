@@ -24,22 +24,25 @@ interface StringDao {
     @Query(
         """
         SELECT * FROM app_strings
-        WHERE (:isAndroidOnly = 0 OR isAndroid = 1)
-          AND (:isIosOnly = 0 OR isIos = 1)
-          AND (key LIKE '%' || :query || '%'
-               OR value LIKE '%' || :query || '%')
-        ORDER BY key ASC
-        LIMIT 200
+        WHERE ((:includeAndroid = 1 AND isAndroid = 1)
+            OR (:includeIos = 1 AND isIos = 1))
+          AND (:query = ''
+            OR key LIKE '%' || :query || '%'
+            OR value LIKE '%' || :query || '%')
+        ORDER BY rowNumber ASC
         """
     )
     fun searchStringsFiltered(
         query: String,
-        isAndroidOnly: Boolean,
-        isIosOnly: Boolean
+        includeAndroid: Boolean,
+        includeIos: Boolean
     ): Flow<List<StringEntity>>
 
     @Query("SELECT * FROM app_strings WHERE key = :key LIMIT 1")
     suspend fun getStringByKey(key: String): StringEntity?
+
+    @Query("SELECT COUNT(*) FROM app_strings")
+    suspend fun count(): Int
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(strings: List<StringEntity>)

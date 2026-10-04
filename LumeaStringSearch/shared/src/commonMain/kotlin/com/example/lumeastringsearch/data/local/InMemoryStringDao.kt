@@ -28,8 +28,8 @@ class InMemoryStringDao(
 
     override fun searchStringsFiltered(
         query: String,
-        isAndroidOnly: Boolean,
-        isIosOnly: Boolean
+        includeAndroid: Boolean,
+        includeIos: Boolean
     ): Flow<List<StringEntity>> {
         return _strings.map { list ->
             list.filter { item ->
@@ -37,20 +37,20 @@ class InMemoryStringDao(
                         item.key.containsIgnoringCase(query) ||
                         item.value.containsIgnoringCase(query)
 
-                val matchesPlatform = when {
-                    isAndroidOnly -> item.isAndroid
-                    isIosOnly -> item.isIos
-                    else -> true
-                }
+                // Union, mirroring the SQL in StringDao.
+                val matchesPlatform =
+                    (includeAndroid && item.isAndroid) || (includeIos && item.isIos)
 
                 matchesQuery && matchesPlatform
-            }
+            }.sortedBy { it.rowNumber }
         }
     }
 
     override suspend fun getStringByKey(key: String): StringEntity? {
         return _strings.value.find { it.key == key }
     }
+
+    override suspend fun count(): Int = _strings.value.size
 
     override suspend fun insertAll(strings: List<StringEntity>) {
         val current = _strings.value.toMutableList()

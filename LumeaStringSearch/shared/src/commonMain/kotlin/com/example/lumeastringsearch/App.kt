@@ -4,27 +4,25 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.safeContentPadding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.lumeastringsearch.di.appModule
+import com.example.lumeastringsearch.data.local.StringSeeder
 import com.example.lumeastringsearch.navigation.AppNavHost
-import org.koin.compose.KoinApplication
-import org.koin.dsl.koinConfiguration
+import org.koin.compose.koinInject
 
 @Composable
-@Preview
 fun App() {
-    KoinApplication(
-        configuration = koinConfiguration {
-            modules(appModule)
-        }
-    ) {
-        MaterialTheme {
-            AppNavHost(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .safeContentPadding()
-            )
-        }
+    val seeder: StringSeeder = koinInject()
+
+    LaunchedEffect(Unit) {
+        seeder.seedIfEmpty()
+    }
+
+    MaterialTheme {
+        AppNavHost(
+            modifier = Modifier
+                .fillMaxSize()
+                .safeContentPadding()
+        )
     }
 }
