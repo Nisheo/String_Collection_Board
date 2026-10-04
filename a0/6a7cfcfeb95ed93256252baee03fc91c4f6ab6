@@ -1,0 +1,89 @@
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/data/StringRepositoryImpl.kt
+  s_0bb5cf4f13af2e::t_e53364cec669ca 12,26-34
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/data/local/DatabaseFactory.kt
+  s_0bb5cf4f13af2e::t_199f828c2472d8 1-17,23-31,33
+  s_0bb5cf4f13af2e::t_ed998687422c62 18-22
+  s_0bb5cf4f13af2e::t_760279e628b5bc 32
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/data/local/StringSeeder.kt
+  s_0bb5cf4f13af2e::t_2e4be2a1659d21 1-26
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/di/AppModule.kt
+  s_0bb5cf4f13af2e::t_a0149231dc3de5 11,14,23,27-31,38-39,43-46
+  s_0bb5cf4f13af2e::t_790980a5a18d15 47
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/data/local/StringDatabase.kt
+  s_0bb5cf4f13af2e::t_4698a8cac3b363 7,22-30
+  h_e8a94bae6c733a 10
+  s_0bb5cf4f13af2e::t_2c214bf6a9eb38 19
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/features/searchscreen/domain/SearchStringsUseCase.kt
+  s_0bb5cf4f13af2e::t_5167452c404c4e 10,26-36
+LumeaStringSearch/shared/src/androidMain/kotlin/com/example/lumeastringsearch/di/PlatformModule.android.kt
+  s_0bb5cf4f13af2e::t_4b90f18942a67c 1-24
+LumeaStringSearch/shared/src/jvmTest/kotlin/com/example/lumeastringsearch/AppModuleTest.kt
+  s_0bb5cf4f13af2e::t_9f1b8c3d1f4b37 4,6,10,18-20,24-27,30,39
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/data/StringRepository.kt
+  s_0bb5cf4f13af2e::t_30c85314b711c8 10,21
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/App.kt
+  s_0bb5cf4f13af2e::t_2e905ee1ee7162 15,17-19,21-26
+  s_0bb5cf4f13af2e::t_a21c6c5bfada3e 7,9,11,16,20
+LumeaStringSearch/androidApp/src/main/AndroidManifest.xml
+  s_0bb5cf4f13af2e::t_cc893e679cfc35 6
+LumeaStringSearch/shared/src/iosMain/kotlin/com/example/lumeastringsearch/data/local/DatabaseFactory.ios.kt
+  s_0bb5cf4f13af2e::t_eb5a26d3f58810 39
+  s_0bb5cf4f13af2e::t_944da78723add8 1-38
+LumeaStringSearch/shared/src/jvmMain/kotlin/com/example/lumeastringsearch/data/local/DatabaseFactory.jvm.kt
+  s_0bb5cf4f13af2e::t_8b64ec3571009b 1-24
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/data/model/PlatformFilter.kt
+  s_0bb5cf4f13af2e::t_70c5549f62d01e 1-31
+LumeaStringSearch/androidApp/src/main/kotlin/com/example/lumeastringsearch/LumeaApplication.kt
+  s_0bb5cf4f13af2e::t_1ff28717f9460d 1-12
+LumeaStringSearch/shared/build.gradle.kts
+  s_0bb5cf4f13af2e::t_0271c477329d3d 14
+  s_0bb5cf4f13af2e::t_2e59f7dd4ab661 66
+  s_0bb5cf4f13af2e::t_3d5db225b24ce5 17-18
+  s_0bb5cf4f13af2e::t_749ec77a1fdd2b 22-25
+  s_0bb5cf4f13af2e::t_f0b1bb985e1224 9-10
+  s_0bb5cf4f13af2e::t_6fabae91b54c53 94-99
+  h_e8a94bae6c733a 13
+  s_0bb5cf4f13af2e::t_92be3fa70f7356 15-16
+  h_e8a94bae6c733a 11-12
+LumeaStringSearch/shared/src/androidMain/kotlin/com/example/lumeastringsearch/data/local/DatabaseFactory.android.kt
+  s_0bb5cf4f13af2e::t_fcd6bca2f1eb8d 1-26
+LumeaStringSearch/shared/src/iosMain/kotlin/com/example/lumeastringsearch/MainViewController.kt
+  s_0bb5cf4f13af2e::t_c1d75b4a2240c5 4,6-9
+LumeaStringSearch/shared/src/jvmTest/kotlin/com/example/lumeastringsearch/StringDatabaseTest.kt
+  s_0bb5cf4f13af2e::t_e8325a22169c39 1-104
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/data/local/StringDAO.kt
+  s_0bb5cf4f13af2e::t_7262a67d5efd0d 27-31,37-38,44-45
+  h_e8a94bae6c733a 32
+  s_0bb5cf4f13af2e::t_c96081ac917d93 46
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/data/local/InMemoryStringDao.kt
+  s_0bb5cf4f13af2e::t_a15ec2ee9bb01d 31-32,40-42,45,53
+  s_0bb5cf4f13af2e::t_0c53dd5b2a4d4c 54
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/di/InitKoin.kt
+  s_0bb5cf4f13af2e::t_720562af526f25 1-10,12-20,22-27,29
+  s_0bb5cf4f13af2e::t_d63e3afd4f57c9 11,21,28
+LumeaStringSearch/shared/src/jvmMain/kotlin/com/example/lumeastringsearch/di/PlatformModule.jvm.kt
+  s_0bb5cf4f13af2e::t_21cf818147cc81 1-20
+LumeaStringSearch/shared/src/iosMain/kotlin/com/example/lumeastringsearch/di/PlatformModule.ios.kt
+  s_0bb5cf4f13af2e::t_9058fd6ddd3f27 1-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a06a7cfcfeb95ed93256252baee03fc91c4f6ab6",
+  "prompts": {},
+  "humans": {
+    "h_e8a94bae6c733a": {
+      "author": "Nishu <nishu.yadav@philips.com>"
+    }
+  },
+  "sessions": {
+    "s_0bb5cf4f13af2e": {
+      "agent_id": {
+        "tool": "github-copilot-jetbrains",
+        "id": "1790942163468",
+        "model": "unknown"
+      },
+      "human_author": "Nishu <nishu.yadav@philips.com>"
+    }
+  }
+}
