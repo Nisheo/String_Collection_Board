@@ -1,0 +1,38 @@
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/features/stringdetail/StringDetailScreen.kt
+  s_0bb5cf4f13af2e::t_2c7be8658e0a48 118-133
+LumeaStringSearch/tools/generate_string_seed.py
+  s_0bb5cf4f13af2e::t_05bb2919adfa7f 1-81,83-86,93-143,145
+  s_0bb5cf4f13af2e::t_ddd49d6996435b 82,87-92,144
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/data/model/AppString.kt
+  s_0bb5cf4f13af2e::t_d26916f9dc9450 21-22
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/data/local/StringEntity.kt
+  s_0bb5cf4f13af2e::t_33f337eee7ea23 24-25,34-35
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/features/searchscreen/domain/model/ScreenModel.kt
+  s_0bb5cf4f13af2e::t_15959b42df432d 26
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/features/searchscreen/domain/SearchStringsUseCase.kt
+  s_0bb5cf4f13af2e::t_1167ccc4cda5bd 31-32
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/features/searchscreen/ui/StringCollectionCard.kt
+  s_0bb5cf4f13af2e::t_91fd6d094e120a 76-85
+  s_0bb5cf4f13af2e::t_8f41ec9e0150a7 12,15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "0ca286759944b94a0b009a925f7e2dc4b7cb3404",
+  "prompts": {},
+  "humans": {
+    "h_e8a94bae6c733a": {
+      "author": "Nishu <nishu.yadav@philips.com>"
+    }
+  },
+  "sessions": {
+    "s_0bb5cf4f13af2e": {
+      "agent_id": {
+        "tool": "github-copilot-jetbrains",
+        "id": "1790942163468",
+        "model": "unknown"
+      },
+      "human_author": "Nishu <nishu.yadav@philips.com>"
+    }
+  }
+}
