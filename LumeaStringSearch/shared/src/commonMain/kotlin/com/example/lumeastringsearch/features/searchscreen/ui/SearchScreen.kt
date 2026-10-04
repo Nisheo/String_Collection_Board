@@ -32,6 +32,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.lumeastringsearch.data.local.InMemoryStringDao
+import com.example.lumeastringsearch.data.local.StringDao
+import com.example.lumeastringsearch.data.local.StringSeedData
 import com.example.lumeastringsearch.di.appModule
 import com.example.lumeastringsearch.features.searchscreen.SearchViewModel
 import org.koin.compose.KoinApplication
@@ -42,6 +45,7 @@ import lumeastringsearch.shared.generated.resources.header
 import lumeastringsearch.shared.generated.resources.search_placeholder
 import org.jetbrains.compose.resources.stringResource
 import org.koin.dsl.koinConfiguration
+import org.koin.dsl.module
 
 @Composable
 fun SearchScreen(
@@ -56,7 +60,7 @@ fun SearchScreen(
     Column(
         modifier = modifier
             .fillMaxSize()
-            .padding(horizontal = 24.dp, vertical = 28.dp)
+            .padding(horizontal = 24.dp, vertical = 12.dp)
     ) {
         Text(
             text = stringResource(Res.string.header),
@@ -107,7 +111,14 @@ fun SearchScreen(
 @Preview
 @Composable
 fun SearchScreenPreview() {
-    KoinApplication(configuration = koinConfiguration { modules(appModule) }) {
+    KoinApplication(
+        configuration = koinConfiguration {
+            modules(
+                appModule,
+                module { single<StringDao> { InMemoryStringDao(StringSeedData.initialStrings) } }
+            )
+        }
+    ) {
         SearchScreen()
     }
 }
