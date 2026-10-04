@@ -1,0 +1,43 @@
+LumeaStringSearch/gradle/libs.versions.toml
+  s_0bb5cf4f13af2e::t_d416e0c8fadc22 50-51
+  s_0bb5cf4f13af2e::t_7cca2c799a49be 38
+  h_e8a94bae6c733a 16,34
+LumeaStringSearch/desktopApp/src/main/kotlin/com/example/lumeastringsearch/main.kt
+  s_0bb5cf4f13af2e::t_3a67d6a3062721 8
+  s_0bb5cf4f13af2e::t_d58713c45eaaec 6-7,17
+  s_0bb5cf4f13af2e::t_3465925f98e9a1 5,10-16,18-20
+LumeaStringSearch/desktopApp/build.gradle.kts
+  s_0bb5cf4f13af2e::t_39d1aa114cb4ec 15-16
+  s_0bb5cf4f13af2e::t_f615c46ca71362 26,28-29,34,39-40,42-43
+  h_e8a94bae6c733a 32,41
+  s_0bb5cf4f13af2e::t_15369bb8ee3a8d 30-31,33,35-38
+LumeaStringSearch/androidApp/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+  h_e8a94bae6c733a 3-6
+LumeaStringSearch/androidApp/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+  h_e8a94bae6c733a 3-6
+LumeaStringSearch/androidApp/src/main/res/values/ic_launcher_background.xml
+  h_e8a94bae6c733a 1-4
+LumeaStringSearch/shared/schemas/com.example.lumeastringsearch.data.local.StringDatabase/1.json
+  h_e8a94bae6c733a 1-81
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b59fc69e9c9ce11b1ca5ddf9b5a5a3155157eee1",
+  "prompts": {},
+  "humans": {
+    "h_e8a94bae6c733a": {
+      "author": "Nishu <nishu.yadav@philips.com>"
+    }
+  },
+  "sessions": {
+    "s_0bb5cf4f13af2e": {
+      "agent_id": {
+        "tool": "github-copilot-jetbrains",
+        "id": "1790942163468",
+        "model": "unknown"
+      },
+      "human_author": "Nishu <nishu.yadav@philips.com>"
+    }
+  }
+}
