@@ -21,18 +21,6 @@ import kotlinx.coroutines.flow.Flow
  */
 @Dao
 interface StringDao {
-
-    @Query(
-        """
-        SELECT * FROM app_strings
-        WHERE key LIKE '%' || :query || '%'
-           OR value LIKE '%' || :query || '%'
-        ORDER BY key ASC
-        LIMIT 100
-        """
-    )
-    fun searchStrings(query: String): Flow<List<StringEntity>>
-
     @Query(
         """
         SELECT * FROM app_strings
@@ -53,14 +41,8 @@ interface StringDao {
     @Query("SELECT * FROM app_strings WHERE key = :key LIMIT 1")
     suspend fun getStringByKey(key: String): StringEntity?
 
-    @Query("SELECT * FROM app_strings ORDER BY key ASC")
-    fun getAllStrings(): Flow<List<StringEntity>>
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(strings: List<StringEntity>)
-
-    @Query("SELECT COUNT(*) FROM app_strings")
-    suspend fun getCount(): Int
 
     @Query("DELETE FROM app_strings")
     suspend fun clearAll()

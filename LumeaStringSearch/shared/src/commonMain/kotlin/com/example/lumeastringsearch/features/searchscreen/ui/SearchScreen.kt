@@ -35,11 +35,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.lumeastringsearch.features.searchscreen.SearchViewModel
 import lumeastringsearch.shared.generated.resources.Res
-import lumeastringsearch.shared.generated.resources.all_platform
-import lumeastringsearch.shared.generated.resources.android_platform
 import lumeastringsearch.shared.generated.resources.description
 import lumeastringsearch.shared.generated.resources.header
-import lumeastringsearch.shared.generated.resources.iOS_platform
 import lumeastringsearch.shared.generated.resources.search_placeholder
 import org.jetbrains.compose.resources.stringResource
 
@@ -52,12 +49,6 @@ fun SearchScreen(
     val query by viewModel.query.collectAsState()
     val selectedPlatformStr by viewModel.selectedPlatform.collectAsState()
     val searchResults by viewModel.searchResults.collectAsState()
-
-    val platforms = listOf(
-        Res.string.all_platform,
-        Res.string.android_platform,
-        Res.string.iOS_platform
-    )
 
     Column(
         modifier = modifier
@@ -101,7 +92,6 @@ fun SearchScreen(
         Spacer(modifier = Modifier.height(16.dp))
 
         FilterTag(
-            platforms = platforms,
             selectedPlatformStr = selectedPlatformStr,
             searchResults = searchResults,
             onPlatformSelected = { viewModel.onPlatformSelected(it) },

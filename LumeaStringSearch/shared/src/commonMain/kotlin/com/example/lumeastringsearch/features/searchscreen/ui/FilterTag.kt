@@ -20,15 +20,12 @@ import androidx.compose.material3.FilterChip
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.lumeastringsearch.features.searchscreen.domain.model.StringItem
+import com.example.lumeastringsearch.util.equalsIgnoringCase
 import lumeastringsearch.shared.generated.resources.Res
 import lumeastringsearch.shared.generated.resources.all_platform
 import lumeastringsearch.shared.generated.resources.android_platform
@@ -38,18 +35,22 @@ import lumeastringsearch.shared.generated.resources.no_results_found
 import lumeastringsearch.shared.generated.resources.platform
 import lumeastringsearch.shared.generated.resources.results
 import lumeastringsearch.shared.generated.resources.try_another_search
-import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
 fun ColumnScope.FilterTag(
-    platforms: List<StringResource>,
     selectedPlatformStr: String,
     searchResults: List<StringItem>,
     onPlatformSelected: (String) -> Unit,
     onStringClick: (String) -> Unit,
     query: String
 ) {
+    val platforms = listOf(
+        Res.string.all_platform,
+        Res.string.android_platform,
+        Res.string.iOS_platform
+    )
+
     Text(
         text = stringResource(Res.string.platform),
         style = MaterialTheme.typography.labelMedium,
@@ -64,9 +65,9 @@ fun ColumnScope.FilterTag(
         platforms.forEach { platformRes ->
             val platformLabel = stringResource(platformRes)
             val isSelected = when {
-                selectedPlatformStr.equals("Android", ignoreCase = true) && platformRes == Res.string.android_platform -> true
-                selectedPlatformStr.equals("iOS", ignoreCase = true) && platformRes == Res.string.iOS_platform -> true
-                selectedPlatformStr.equals("All", ignoreCase = true) && platformRes == Res.string.all_platform -> true
+                selectedPlatformStr.equalsIgnoringCase("Android") && platformRes == Res.string.android_platform -> true
+                selectedPlatformStr.equalsIgnoringCase("iOS") && platformRes == Res.string.iOS_platform -> true
+                selectedPlatformStr.equalsIgnoringCase("All") && platformRes == Res.string.all_platform -> true
                 else -> false
             }
 

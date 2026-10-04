@@ -16,3 +16,7 @@ package com.example.lumeastringsearch.util
 fun String.containsIgnoringCase(other: String): Boolean {
     return this.contains(other, ignoreCase = true)
 }
+
+fun String.equalsIgnoringCase(other: String): Boolean {
+    return this.equals(other, ignoreCase = true)
+}

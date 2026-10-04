@@ -6,6 +6,7 @@
 
 package com.example.lumeastringsearch.data.local
 
+import com.example.lumeastringsearch.util.containsIgnoringCase
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.map
@@ -26,16 +27,6 @@ class InMemoryStringDao(
 ) : StringDao {
     private val _strings = MutableStateFlow(initialData)
 
-    override fun searchStrings(query: String): Flow<List<StringEntity>> {
-        return _strings.map { list ->
-            if (query.isBlank()) list
-            else list.filter {
-                it.key.contains(query, ignoreCase = true) ||
-                it.value.contains(query, ignoreCase = true)
-            }
-        }
-    }
-
     override fun searchStringsFiltered(
         query: String,
         isAndroidOnly: Boolean,
@@ -44,8 +35,8 @@ class InMemoryStringDao(
         return _strings.map { list ->
             list.filter { item ->
                 val matchesQuery = query.isBlank() ||
-                        item.key.contains(query, ignoreCase = true) ||
-                        item.value.contains(query, ignoreCase = true)
+                        item.key.containsIgnoringCase(query) ||
+                        item.value.containsIgnoringCase(query)
 
                 val matchesPlatform = when {
                     isAndroidOnly -> item.isAndroid
@@ -62,10 +53,6 @@ class InMemoryStringDao(
         return _strings.value.find { it.key == key }
     }
 
-    override fun getAllStrings(): Flow<List<StringEntity>> {
-        return _strings
-    }
-
     override suspend fun insertAll(strings: List<StringEntity>) {
         val current = _strings.value.toMutableList()
         strings.forEach { newEntity ->
@@ -73,10 +60,6 @@ class InMemoryStringDao(
             current.add(newEntity)
         }
         _strings.value = current
-    }
-
-    override suspend fun getCount(): Int {
-        return _strings.value.size
     }
 
     override suspend fun clearAll() {
