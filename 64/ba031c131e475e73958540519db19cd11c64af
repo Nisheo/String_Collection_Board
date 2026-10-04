@@ -1,0 +1,25 @@
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/data/StringRepositoryImpl.kt
+  s_0bb5cf4f13af2e::t_d0bedcd05898f9 32,37,39-47
+  s_0bb5cf4f13af2e::t_cbf3f41ff3f35c 10
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "64ba031c131e475e73958540519db19cd11c64af",
+  "prompts": {},
+  "humans": {
+    "h_e8a94bae6c733a": {
+      "author": "Nishu <nishu.yadav@philips.com>"
+    }
+  },
+  "sessions": {
+    "s_0bb5cf4f13af2e": {
+      "agent_id": {
+        "tool": "github-copilot-jetbrains",
+        "id": "1790942163468",
+        "model": "unknown"
+      },
+      "human_author": "Nishu <nishu.yadav@philips.com>"
+    }
+  }
+}
