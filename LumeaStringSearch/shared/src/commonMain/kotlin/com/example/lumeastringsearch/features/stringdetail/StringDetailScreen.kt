@@ -115,6 +115,22 @@ fun StringDetailScreen(
                     style = MaterialTheme.typography.bodyMedium,
                     fontWeight = FontWeight.Medium
                 )
+
+                val rowNumber = stringDetail?.rowNumber ?: 0
+                if (rowNumber > 0) {
+                    Spacer(modifier = Modifier.height(16.dp))
+
+                    Text(
+                        text = "EXCEL ROW",
+                        style = MaterialTheme.typography.labelMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                    Text(
+                        text = "Row $rowNumber \u2022 LumeaLocalization1oct.xlsx (Shopping Cart)",
+                        style = MaterialTheme.typography.bodyMedium,
+                        fontWeight = FontWeight.Medium
+                    )
+                }
             }
         }
     }

@@ -18,5 +18,6 @@ data class AppString(
     val value: String,
     val isAndroid: Boolean = false,
     val isIos: Boolean = true,
-    val language: String = "English"
+    val language: String = "English",
+    val rowNumber: Int = 0
 )

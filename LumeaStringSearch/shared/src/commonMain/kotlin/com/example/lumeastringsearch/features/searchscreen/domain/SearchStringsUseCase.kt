@@ -28,7 +28,8 @@ class SearchStringsUseCase(
                     key = appString.key,
                     englishText = appString.value,
                     isAndroid = appString.isAndroid,
-                    isIos = appString.isIos
+                    isIos = appString.isIos,
+                    rowNumber = appString.rowNumber
                 )
             }
         }

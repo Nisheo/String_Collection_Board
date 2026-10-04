@@ -21,7 +21,8 @@ import androidx.room3.PrimaryKey
 @Entity(
     tableName = "app_strings",
     indices = [
-        Index(value = ["key"])
+        Index(value = ["key"]),
+        Index(value = ["rowNumber"])
     ]
 )
 data class StringEntity(
@@ -30,5 +31,6 @@ data class StringEntity(
     val value: String,
     val isAndroid: Boolean = false,
     val isIos: Boolean = true,
-    val language: String = "English"
+    val language: String = "English",
+    val rowNumber: Int = 0
 )

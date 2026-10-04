@@ -23,5 +23,6 @@ data class StringItem(
     val englishText: String,
     val isAndroid: Boolean = false,
     val isIos: Boolean = true,
+    val rowNumber: Int = 0,
     val platform: StringResource = if (isAndroid) Res.string.android_platform else Res.string.iOS_platform
 )
