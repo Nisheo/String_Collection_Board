@@ -1,0 +1,84 @@
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/data/local/StringSeedData.kt
+  h_e8a94bae6c733a 1-1405
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/features/searchscreen/domain/SearchStringsUseCase.kt
+  h_e8a94bae6c733a 9-13,19,21-35
+  h_e8a94bae6c733a 36
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/data/local/StringEntity.kt
+  s_0bb5cf4f13af2e::t_404867caac44d7 24,31,34
+  h_e8a94bae6c733a 9-11,32-33
+  s_0bb5cf4f13af2e::t_af35b831eccb85 20-23,25-30
+  h_e8a94bae6c733a 1-8,12-19
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/features/searchscreen/domain/model/ScreenModel.kt
+  h_e8a94bae6c733a 24-26
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/data/StringRepositoryImpl.kt
+  s_0bb5cf4f13af2e::t_63669f30c090bc 22
+  h_e8a94bae6c733a 9-13,24-29,33-34,38
+  s_0bb5cf4f13af2e::t_3d5ee760bc228b 21,23,30-32,35-37,39
+  s_0bb5cf4f13af2e::t_a183ea79d2fe3e 40
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/data/local/DatabaseProvider.kt
+  s_0bb5cf4f13af2e::t_581b252f92899d 34
+  h_e8a94bae6c733a 1-20,22-33,35-47,49-85
+  s_0bb5cf4f13af2e::t_bf99ade9c95944 21
+  s_0bb5cf4f13af2e::t_18f661764ac4fc 48
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/data/model/AppString.kt
+  h_e8a94bae6c733a 19-21
+  s_0bb5cf4f13af2e::t_b7c921a3cd4a4b 17-18
+  s_0bb5cf4f13af2e::t_b70480d69bd9ae 14-16
+  h_e8a94bae6c733a 1-13,22
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/data/local/StringDatabase.kt
+  s_0bb5cf4f13af2e::t_122a7cf9c17cc2 19-22
+  h_e8a94bae6c733a 9-11
+  h_e8a94bae6c733a 1-8,12-18
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/data/local/StringDAO.kt
+  h_e8a94bae6c733a 9-14,40-41,43-44,47-57
+  s_0bb5cf4f13af2e::t_6b5982043fa949 39,42
+  s_0bb5cf4f13af2e::t_b6932edc46b35f 22-38,45-46,58-67
+  h_e8a94bae6c733a 1-8,15-21
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/features/searchscreen/ui/SearchScreen.kt
+  h_e8a94bae6c733a 9,29,36,49,52-54,85,94,104-109
+  h_e8a94bae6c733a 10-16,103,110
+LumeaStringSearch/desktopApp/build.gradle.kts
+  h_e8a94bae6c733a 12
+LumeaStringSearch/gradle/libs.versions.toml
+  s_0bb5cf4f13af2e::t_e2b230e2d39480 18-20
+  s_0bb5cf4f13af2e::t_b3d22dd4ddb1a8 42-44
+  s_0bb5cf4f13af2e::t_71c324c857c88c 45-46
+  s_0bb5cf4f13af2e::t_82fa51949388bd 56-57
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/data/StringRepository.kt
+  h_e8a94bae6c733a 9,20-21
+  h_e8a94bae6c733a 10-11,19
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/features/searchscreen/SearchViewModel.kt
+  h_e8a94bae6c733a 9-22,28,30-32,34-56,58-60
+  s_0bb5cf4f13af2e::t_2b977b0e450ec1 33
+  h_e8a94bae6c733a 61
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/features/searchscreen/ui/FilterTag.kt
+  h_e8a94bae6c733a 31,34,36,47-49,64-72,74,76-81,83,102,110,134,137
+  h_e8a94bae6c733a 75,82,128
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/features/stringdetail/StringDetailScreen.kt
+  h_e8a94bae6c733a 13,16-18,23-27,31-32,40-42,44-54,73,75-89,92-93,95-123,125-126
+  s_0bb5cf4f13af2e::t_af51cf69e5ea45 43
+  h_e8a94bae6c733a 90-91,94,124
+LumeaStringSearch/shared/build.gradle.kts
+  h_e8a94bae6c733a 50-52,63-65
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "e43142fe6c93657a8a23a95b8d8308982675d848",
+  "prompts": {},
+  "humans": {
+    "h_e8a94bae6c733a": {
+      "author": "Nishu <nishu.yadav@philips.com>"
+    }
+  },
+  "sessions": {
+    "s_0bb5cf4f13af2e": {
+      "agent_id": {
+        "tool": "github-copilot-jetbrains",
+        "id": "1790942163468",
+        "model": "unknown"
+      },
+      "human_author": "Nishu <nishu.yadav@philips.com>"
+    }
+  }
+}
