@@ -7,6 +7,7 @@
 package com.example.lumeastringsearch.data
 
 import com.example.lumeastringsearch.data.local.StringDao
+import com.example.lumeastringsearch.data.local.StringEntity
 import com.example.lumeastringsearch.data.model.AppString
 import com.example.lumeastringsearch.util.equalsIgnoringCase
 import kotlinx.coroutines.flow.Flow
@@ -28,27 +29,20 @@ class StringRepositoryImpl(
         val isIosOnly = platformFilter.equalsIgnoringCase("iOS") || isAll
 
         return dao.searchStringsFiltered(query, isAndroidOnly, isIosOnly).map { entities ->
-            entities.map { entity ->
-                AppString(
-                    key = entity.key,
-                    value = entity.value,
-                    isAndroid = entity.isAndroid,
-                    isIos = entity.isIos,
-                    language = entity.language
-                )
-            }
+            entities.map { entity -> entity.toAppString() }
         }
     }
 
     override suspend fun getStringByKey(key: String): AppString? {
-        return dao.getStringByKey(key)?.let { entity ->
-            AppString(
-                key = entity.key,
-                value = entity.value,
-                isAndroid = entity.isAndroid,
-                isIos = entity.isIos,
-                language = entity.language
-            )
-        }
+        return dao.getStringByKey(key)?.toAppString()
     }
+
+    private fun StringEntity.toAppString(): AppString = AppString(
+        key = key,
+        value = value,
+        isAndroid = isAndroid,
+        isIos = isIos,
+        language = language,
+        rowNumber = rowNumber
+    )
 }
