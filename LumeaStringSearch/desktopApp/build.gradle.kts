@@ -12,6 +12,8 @@ dependencies {
     implementation(compose.desktop.currentOs)
     implementation(libs.kotlinx.coroutinesSwing)
 
+    implementation(libs.compose.components.resources)
+
     implementation(libs.compose.uiToolingPreview)
 }
 
@@ -21,8 +23,24 @@ compose.desktop {
 
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "com.example.lumeastringsearch"
+            packageName = "Lumea String Search"
             packageVersion = "1.0.0"
+            description = "Search the Lumea localization string collection"
+            vendor = "Philips"
+
+            // Installer / bundle icons. Each OS demands its own container format,
+            // so there is no single cross-platform path
+            macOS {
+                bundleID = "com.example.lumeastringsearch"
+                iconFile.set(project.file("icons/lumea.icns"))
+            }
+            windows {
+                iconFile.set(project.file("icons/lumea.ico"))
+                menuGroup = "Lumea"
+                // Must stay constant across releases, otherwise each MSI installs
+                // side-by-side instead of upgrading the previous installation.
+                upgradeUuid = "54ed771a-4f0a-463e-9e2a-2ab5d41f4ea5"
+            }
         }
     }
 }
