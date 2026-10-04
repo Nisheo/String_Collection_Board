@@ -1,0 +1,24 @@
+LumeaStringSearch/gradle/libs.versions.toml
+  s_0bb5cf4f13af2e::t_4fce5891f571ea 3-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "73255ffcc37d92eca89004a6f0318eba8b9fd4a2",
+  "prompts": {},
+  "humans": {
+    "h_e8a94bae6c733a": {
+      "author": "Nishu <nishu.yadav@philips.com>"
+    }
+  },
+  "sessions": {
+    "s_0bb5cf4f13af2e": {
+      "agent_id": {
+        "tool": "github-copilot-jetbrains",
+        "id": "1790942163468",
+        "model": "unknown"
+      },
+      "human_author": "Nishu <nishu.yadav@philips.com>"
+    }
+  }
+}
