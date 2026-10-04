@@ -47,6 +47,9 @@ kotlin {
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.compose.uiTooling)
         }
+        jvmMain.dependencies {
+            implementation(libs.kotlinx.coroutinesSwing)
+        }
         commonMain.dependencies {
             implementation(libs.compose.runtime)
             implementation(libs.compose.foundation)
@@ -57,6 +60,9 @@ kotlin {
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
             implementation(libs.androidx.navigation.compose)
+            implementation(libs.androidx.sqlite.bundled)
+            implementation(libs.androidx.room3.runtime)
+            implementation(libs.androidx.room3.sqlite.wrapper)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

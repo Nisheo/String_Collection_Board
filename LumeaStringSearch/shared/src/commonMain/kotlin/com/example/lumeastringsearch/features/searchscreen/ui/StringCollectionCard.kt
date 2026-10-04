@@ -72,12 +72,6 @@ fun StringCollectionCard(
                         )
                     }
                 }
-
-                Text(
-                    text = item.screen,
-                    style = MaterialTheme.typography.labelMedium,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                )
             }
 
             Text(

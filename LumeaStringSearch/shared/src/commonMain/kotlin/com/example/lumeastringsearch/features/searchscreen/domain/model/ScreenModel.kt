@@ -21,45 +21,7 @@ import org.jetbrains.compose.resources.StringResource
 data class StringItem(
     val key: String,
     val englishText: String,
-    val screen: String,
-    val platform: StringResource
-)
-
-val sampleStrings = listOf(
-    StringItem(
-        key = "treatment_start_title",
-        englishText = "Start your treatment",
-        screen = "Treatment",
-        platform =  Res.string.android_platform
-    ),
-    StringItem(
-        key = "treatment_history_title",
-        englishText = "Your treatment history",
-        screen = "Treatment History",
-        platform =  Res.string.iOS_platform
-    ),
-    StringItem(
-        key = "treatment_report_title",
-        englishText = "View treatment report",
-        screen = "Treatment Report",
-        platform =  Res.string.android_platform
-    ),
-    StringItem(
-        key = "settings_title",
-        englishText = "Settings",
-        screen = "Settings",
-        platform =  Res.string.iOS_platform
-    ),
-    StringItem(
-        key = "skin_test_instruction",
-        englishText = "Test your skin's reaction",
-        screen = "Skin Test",
-        platform =  Res.string.android_platform
-    ),
-    StringItem(
-        key = "treatment_save_button",
-        englishText = "Save treatment",
-        screen = "Treatment",
-        platform =  Res.string.iOS_platform
-    )
+    val isAndroid: Boolean = false,
+    val isIos: Boolean = true,
+    val platform: StringResource = if (isAndroid) Res.string.android_platform else Res.string.iOS_platform
 )

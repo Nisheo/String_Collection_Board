@@ -28,11 +28,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.example.lumeastringsearch.features.searchscreen.domain.model.sampleStrings
-import com.example.lumeastringsearch.util.containsIgnoringCase
+import com.example.lumeastringsearch.features.searchscreen.domain.model.StringItem
 import lumeastringsearch.shared.generated.resources.Res
 import lumeastringsearch.shared.generated.resources.all_platform
+import lumeastringsearch.shared.generated.resources.android_platform
 import lumeastringsearch.shared.generated.resources.collection
+import lumeastringsearch.shared.generated.resources.iOS_platform
 import lumeastringsearch.shared.generated.resources.no_results_found
 import lumeastringsearch.shared.generated.resources.platform
 import lumeastringsearch.shared.generated.resources.results
@@ -40,33 +41,15 @@ import lumeastringsearch.shared.generated.resources.try_another_search
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.stringResource
 
-/**
- * Project          : Lumea
- * Revision History : version 1
- * Date             : 02/10/26
- * Original author  : Nishu
- * Description      : Initial version
- */
 @Composable
 fun ColumnScope.FilterTag(
     platforms: List<StringResource>,
+    selectedPlatformStr: String,
+    searchResults: List<StringItem>,
+    onPlatformSelected: (String) -> Unit,
     onStringClick: (String) -> Unit,
     query: String
 ) {
-
-    var selectedPlatform by remember { mutableStateOf( Res.string.all_platform) }
-    val filteredStrings = sampleStrings.filter { item ->
-        val matchesQuery = query.isBlank() ||
-                           item.key.containsIgnoringCase(query) ||
-                           item.englishText.containsIgnoringCase(query) ||
-                           item.screen.containsIgnoringCase(query)
-
-        val matchesPlatform = selectedPlatform ==  Res.string.all_platform ||
-                              item.platform == selectedPlatform
-
-        matchesQuery && matchesPlatform
-    }
-
     Text(
         text = stringResource(Res.string.platform),
         style = MaterialTheme.typography.labelMedium,
@@ -78,11 +61,26 @@ fun ColumnScope.FilterTag(
     Row(
         horizontalArrangement = Arrangement.spacedBy(8.dp)
     ) {
-        platforms.forEach { platform ->
+        platforms.forEach { platformRes ->
+            val platformLabel = stringResource(platformRes)
+            val isSelected = when {
+                selectedPlatformStr.equals("Android", ignoreCase = true) && platformRes == Res.string.android_platform -> true
+                selectedPlatformStr.equals("iOS", ignoreCase = true) && platformRes == Res.string.iOS_platform -> true
+                selectedPlatformStr.equals("All", ignoreCase = true) && platformRes == Res.string.all_platform -> true
+                else -> false
+            }
+
             FilterChip(
-                selected = selectedPlatform == platform,
-                onClick = { selectedPlatform = platform },
-                label = { Text(stringResource(platform)) }
+                selected = isSelected,
+                onClick = {
+                    val filterValue = when (platformRes) {
+                        Res.string.android_platform -> "Android"
+                        Res.string.iOS_platform -> "iOS"
+                        else -> "All"
+                    }
+                    onPlatformSelected(filterValue)
+                },
+                label = { Text(platformLabel) }
             )
         }
     }
@@ -101,7 +99,7 @@ fun ColumnScope.FilterTag(
         )
 
         Text(
-            text = "${filteredStrings.size} strings",
+            text = "${searchResults.size} strings",
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
@@ -109,7 +107,7 @@ fun ColumnScope.FilterTag(
 
     Spacer(modifier = Modifier.height(12.dp))
 
-    if (filteredStrings.isEmpty()) {
+    if (searchResults.isEmpty()) {
         Column(
             modifier = Modifier.fillMaxWidth().padding(vertical = 48.dp),
             horizontalAlignment = Alignment.CenterHorizontally
@@ -127,17 +125,16 @@ fun ColumnScope.FilterTag(
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
         }
-    }
-    else {
+    } else {
         LazyColumn(
             modifier = Modifier.weight(1f),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             items(
-                items = filteredStrings, key = { it.key }) { item ->
+                items = searchResults, key = { it.key }) { item ->
                 StringCollectionCard(
                     item = item,
-                    query,
+                    query = query,
                     onClick = { onStringClick(item.key) }
                 )
             }

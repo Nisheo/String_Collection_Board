@@ -10,15 +10,26 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.example.lumeastringsearch.data.local.DatabaseProvider
+import com.example.lumeastringsearch.data.model.AppString
 
 @Composable
 fun StringDetailScreen(
@@ -26,6 +37,21 @@ fun StringDetailScreen(
     onBack: () -> Unit,
     modifier: Modifier = Modifier
 ) {
+    var stringDetail by remember { mutableStateOf<AppString?>(null) }
+
+    LaunchedEffect(stringKey) {
+        val entity = DatabaseProvider.dao.getStringByKey(stringKey)
+        if (entity != null) {
+            stringDetail = AppString(
+                key = entity.key,
+                value = entity.value,
+                isAndroid = entity.isAndroid,
+                isIos = entity.isIos,
+                language = entity.language
+            )
+        }
+    }
+
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -44,13 +70,59 @@ fun StringDetailScreen(
             fontWeight = FontWeight.Bold
         )
 
-        Spacer(modifier = Modifier.height(8.dp))
+        Spacer(modifier = Modifier.height(16.dp))
 
-        Text(
-            text = stringKey,
-            style = MaterialTheme.typography.bodyLarge,
-            color = MaterialTheme.colorScheme.primary
-        )
+        Card(
+            modifier = Modifier.fillMaxWidth(),
+            shape = RoundedCornerShape(14.dp),
+            colors = CardDefaults.cardColors(
+                containerColor = MaterialTheme.colorScheme.surfaceContainerLow
+            )
+        ) {
+            Column(
+                modifier = Modifier.padding(20.dp)
+            ) {
+                Text(
+                    text = "KEY",
+                    style = MaterialTheme.typography.labelMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Text(
+                    text = stringKey,
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.primary
+                )
+
+                Spacer(modifier = Modifier.height(16.dp))
+
+                Text(
+                    text = "ENGLISH VALUE",
+                    style = MaterialTheme.typography.labelMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Text(
+                    text = stringDetail?.value ?: "Loading...",
+                    style = MaterialTheme.typography.bodyLarge
+                )
+
+                Spacer(modifier = Modifier.height(16.dp))
+
+                Text(
+                    text = "PLATFORMS",
+                    style = MaterialTheme.typography.labelMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                val platformsList = mutableListOf<String>()
+                if (stringDetail?.isAndroid == true) platformsList.add("Android")
+                if (stringDetail?.isIos == true) platformsList.add("iOS")
+
+                Text(
+                    text = if (platformsList.isNotEmpty()) platformsList.joinToString(", ") else "iOS",
+                    style = MaterialTheme.typography.bodyMedium,
+                    fontWeight = FontWeight.Medium
+                )
+            }
+        }
     }
 }
-

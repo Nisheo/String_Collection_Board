@@ -6,13 +6,56 @@
 
 package com.example.lumeastringsearch.features.searchscreen
 
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.lumeastringsearch.data.StringRepositoryImpl
+import com.example.lumeastringsearch.data.local.DatabaseProvider
+import com.example.lumeastringsearch.features.searchscreen.domain.SearchStringsUseCase
+import com.example.lumeastringsearch.features.searchscreen.domain.model.StringItem
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.flatMapLatest
+import kotlinx.coroutines.flow.stateIn
+
 /**
  * Project          : Lumea
  * Revision History : version 1
  * Date             : 30/09/26
  * Original author  : Nishu
- * Description      : Initial version
+ * Description      : ViewModel for string search screen.
  */
-class SearchViewModel {
+@OptIn(ExperimentalCoroutinesApi::class)
+class SearchViewModel(
+    private val searchStringsUseCase: SearchStringsUseCase = SearchStringsUseCase(
+        StringRepositoryImpl(DatabaseProvider.dao)
+    )
+) : ViewModel() {
 
+    private val _query = MutableStateFlow("")
+    val query: StateFlow<String> = _query
+
+    private val _selectedPlatform = MutableStateFlow("All")
+    val selectedPlatform: StateFlow<String> = _selectedPlatform
+
+    val searchResults: StateFlow<List<StringItem>> =
+        combine(_query, _selectedPlatform) { q, p ->
+        Pair(q, p)
+    }.flatMapLatest { (q, p) ->
+        searchStringsUseCase(q, p)
+    }.stateIn(
+        scope = viewModelScope,
+        started = SharingStarted.WhileSubscribed(5000),
+        initialValue = emptyList()
+    )
+
+    fun onQueryChanged(newQuery: String) {
+        _query.value = newQuery
+    }
+
+    fun onPlatformSelected(platform: String) {
+        _selectedPlatform.value = platform
+    }
 }

@@ -4,18 +4,19 @@
  * the written consent of the copyright holder.
  */
 
-package com.example.lumeastringsearch.data
-
-import com.example.lumeastringsearch.data.model.AppString
-import kotlinx.coroutines.flow.Flow
+package com.example.lumeastringsearch.data.model
 
 /**
  * Project          : Lumea
  * Revision History : version 1
- * Date             : 30/09/26
+ * Date             : 02/10/26
  * Original author  : Nishu
  * Description      : Initial version
  */
-interface StringRepository {
-    fun searchStringsFiltered(query: String, platformFilter: String): Flow<List<AppString>>
-}
+data class AppString(
+    val key: String,
+    val value: String,
+    val isAndroid: Boolean = false,
+    val isIos: Boolean = true,
+    val language: String = "English"
+)
