@@ -9,11 +9,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.lumeastringsearch.di.appModule
 import com.example.lumeastringsearch.navigation.AppNavHost
 import org.koin.compose.KoinApplication
+import org.koin.dsl.koinConfiguration
 
 @Composable
 @Preview
 fun App() {
-    KoinApplication(application = { modules(appModule) }) {
+    KoinApplication(
+        configuration = koinConfiguration {
+            modules(appModule)
+        }
+    ) {
         MaterialTheme {
             AppNavHost(
                 modifier = Modifier

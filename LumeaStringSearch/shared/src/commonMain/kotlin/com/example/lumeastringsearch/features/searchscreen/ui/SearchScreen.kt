@@ -41,6 +41,7 @@ import lumeastringsearch.shared.generated.resources.description
 import lumeastringsearch.shared.generated.resources.header
 import lumeastringsearch.shared.generated.resources.search_placeholder
 import org.jetbrains.compose.resources.stringResource
+import org.koin.dsl.koinConfiguration
 
 @Composable
 fun SearchScreen(
@@ -106,7 +107,7 @@ fun SearchScreen(
 @Preview
 @Composable
 fun SearchScreenPreview() {
-    KoinApplication(application = { modules(appModule) }) {
+    KoinApplication(configuration = koinConfiguration { modules(appModule) }) {
         SearchScreen()
     }
 }
