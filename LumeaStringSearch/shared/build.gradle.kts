@@ -65,7 +65,6 @@ kotlin {
             implementation(libs.androidx.navigation.compose)
             implementation(libs.androidx.sqlite.bundled)
             implementation(libs.androidx.room3.runtime)
-            implementation(libs.androidx.room3.compiler)
             implementation(libs.koin.core)
             implementation(libs.koin.compose)
             implementation(libs.koin.compose.viewmodel)
