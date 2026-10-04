@@ -1,0 +1,64 @@
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/features/stringdetail/StringDetailScreen.kt
+  s_0bb5cf4f13af2e::t_3f033037104791 44-45
+  s_0bb5cf4f13af2e::t_6a2c0c2ee9e394 31,33
+  s_0bb5cf4f13af2e::t_a40a91511b374b 42
+LumeaStringSearch/gradle.properties
+  s_0bb5cf4f13af2e::t_7f1720c79819ea 7
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/features/searchscreen/SearchViewModel.kt
+  s_0bb5cf4f13af2e::t_2d852ab374ec77 30
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/data/StringRepository.kt
+  s_0bb5cf4f13af2e::t_807de65bdccacd 21-22
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/features/searchscreen/ui/SearchScreen.kt
+  s_0bb5cf4f13af2e::t_e1b3e576589129 109
+  s_0bb5cf4f13af2e::t_e334ebe987a42e 35,37-38
+  s_0bb5cf4f13af2e::t_cba4a84bd942a4 48
+  s_0bb5cf4f13af2e::t_84ed08be9e326a 110-111
+LumeaStringSearch/shared/build.gradle.kts
+  s_0bb5cf4f13af2e::t_1db20c229f2b0e 49-51
+  h_e8a94bae6c733a 68
+  s_0bb5cf4f13af2e::t_6bd30d63955948 69-71
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/di/AppModule.kt
+  s_0bb5cf4f13af2e::t_0b784430454acb 1-38
+  s_0bb5cf4f13af2e::t_ce545d576951e7 39
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/data/StringRepositoryImpl.kt
+  s_0bb5cf4f13af2e::t_6f19cad8465d32 42-53
+LumeaStringSearch/shared/src/jvmTest/kotlin/com/example/lumeastringsearch/AppModuleTest.kt
+  s_0bb5cf4f13af2e::t_522a4abbaace60 1-34
+  s_0bb5cf4f13af2e::t_b6d285aa0f9d7d 35
+LumeaStringSearch/gradle/libs.versions.toml
+  h_e8a94bae6c733a 2,6
+  s_0bb5cf4f13af2e::t_de7b85d53c53d7 33-35
+LumeaStringSearch/gradle/wrapper/gradle-wrapper.properties
+  h_e8a94bae6c733a 3
+  h_e8a94bae6c733a 9
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/App.kt
+  s_0bb5cf4f13af2e::t_2c52b6c5827dd6 9,11,16
+  s_0bb5cf4f13af2e::t_907c8f5fc43490 17-23
+LumeaStringSearch/gradlew
+  h_e8a94bae6c733a 23,32
+LumeaStringSearch/gradlew.bat
+  h_e8a94bae6c733a 22,29-55,75-79,82,90-94,97,104,107,109
+LumeaStringSearch/shared/src/commonMain/kotlin/com/example/lumeastringsearch/data/local/InMemoryStringDao.kt
+  h_e8a94bae6c733a 19-21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "3ec4d685cab05e5bff7e75ea15443820957ffaf3",
+  "prompts": {},
+  "humans": {
+    "h_e8a94bae6c733a": {
+      "author": "Nishu <nishu.yadav@philips.com>"
+    }
+  },
+  "sessions": {
+    "s_0bb5cf4f13af2e": {
+      "agent_id": {
+        "tool": "github-copilot-jetbrains",
+        "id": "1790942163468",
+        "model": "unknown"
+      },
+      "human_author": "Nishu <nishu.yadav@philips.com>"
+    }
+  }
+}
