@@ -28,8 +28,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.example.lumeastringsearch.data.local.DatabaseProvider
+import com.example.lumeastringsearch.data.StringRepository
 import com.example.lumeastringsearch.data.model.AppString
+import org.koin.compose.koinInject
 
 @Composable
 fun StringDetailScreen(
@@ -38,18 +39,10 @@ fun StringDetailScreen(
     modifier: Modifier = Modifier
 ) {
     var stringDetail by remember { mutableStateOf<AppString?>(null) }
+    val repository: StringRepository = koinInject()
 
-    LaunchedEffect(stringKey) {
-        val entity = DatabaseProvider.dao.getStringByKey(stringKey)
-        if (entity != null) {
-            stringDetail = AppString(
-                key = entity.key,
-                value = entity.value,
-                isAndroid = entity.isAndroid,
-                isIos = entity.isIos,
-                language = entity.language
-            )
-        }
+    LaunchedEffect(stringKey, repository) {
+        stringDetail = repository.getStringByKey(stringKey)
     }
 
     Column(

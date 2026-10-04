@@ -46,6 +46,9 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.compose.uiTooling)
+            // Android-only artifact (AAR): it publishes no common/jvm/native variants,
+            // so it must not live in commonMain or the JVM and iOS targets fail to resolve.
+            implementation(libs.androidx.room3.sqlite.wrapper)
         }
         jvmMain.dependencies {
             implementation(libs.kotlinx.coroutinesSwing)
@@ -62,7 +65,10 @@ kotlin {
             implementation(libs.androidx.navigation.compose)
             implementation(libs.androidx.sqlite.bundled)
             implementation(libs.androidx.room3.runtime)
-            implementation(libs.androidx.room3.sqlite.wrapper)
+            implementation(libs.androidx.room3.compiler)
+            implementation(libs.koin.core)
+            implementation(libs.koin.compose)
+            implementation(libs.koin.compose.viewmodel)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

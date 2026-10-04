@@ -6,16 +6,20 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.lumeastringsearch.di.appModule
 import com.example.lumeastringsearch.navigation.AppNavHost
+import org.koin.compose.KoinApplication
 
 @Composable
 @Preview
 fun App() {
-    MaterialTheme {
-        AppNavHost(
-            modifier = Modifier
-                .fillMaxSize()
-                .safeContentPadding()
-        )
+    KoinApplication(application = { modules(appModule) }) {
+        MaterialTheme {
+            AppNavHost(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .safeContentPadding()
+            )
+        }
     }
 }

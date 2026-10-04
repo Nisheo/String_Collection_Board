@@ -28,12 +28,14 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.lumeastringsearch.di.appModule
 import com.example.lumeastringsearch.features.searchscreen.SearchViewModel
+import org.koin.compose.KoinApplication
+import org.koin.compose.viewmodel.koinViewModel
 import lumeastringsearch.shared.generated.resources.Res
 import lumeastringsearch.shared.generated.resources.description
 import lumeastringsearch.shared.generated.resources.header
@@ -43,7 +45,7 @@ import org.jetbrains.compose.resources.stringResource
 @Composable
 fun SearchScreen(
     modifier: Modifier = Modifier,
-    viewModel: SearchViewModel = remember { SearchViewModel() },
+    viewModel: SearchViewModel = koinViewModel(),
     onStringClick: (String) -> Unit = {}
 ) {
     val query by viewModel.query.collectAsState()
@@ -104,5 +106,7 @@ fun SearchScreen(
 @Preview
 @Composable
 fun SearchScreenPreview() {
-    SearchScreen()
+    KoinApplication(application = { modules(appModule) }) {
+        SearchScreen()
+    }
 }

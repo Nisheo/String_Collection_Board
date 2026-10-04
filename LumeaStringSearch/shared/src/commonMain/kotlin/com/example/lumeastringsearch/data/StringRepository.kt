@@ -18,4 +18,6 @@ import kotlinx.coroutines.flow.Flow
  */
 interface StringRepository {
     fun searchStringsFiltered(query: String, platformFilter: String): Flow<List<AppString>>
+
+    suspend fun getStringByKey(key: String): AppString?
 }

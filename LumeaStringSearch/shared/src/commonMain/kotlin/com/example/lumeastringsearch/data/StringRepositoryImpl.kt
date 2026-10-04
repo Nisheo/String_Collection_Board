@@ -39,4 +39,16 @@ class StringRepositoryImpl(
             }
         }
     }
+
+    override suspend fun getStringByKey(key: String): AppString? {
+        return dao.getStringByKey(key)?.let { entity ->
+            AppString(
+                key = entity.key,
+                value = entity.value,
+                isAndroid = entity.isAndroid,
+                isIos = entity.isIos,
+                language = entity.language
+            )
+        }
+    }
 }

@@ -16,11 +16,10 @@ import kotlinx.coroutines.flow.map
  * Revision History : version 1
  * Date             : 02/10/26
  * Original author  : Nishu
- * Description      : In-memory string DAO and database provider initialized with Excel seed data.
+ * Description      : In-memory [StringDao] backed by the Excel-derived seed data.
+ *                    Instances are created and owned by `AppContainer`, not by a global
+ *                    singleton, so tests can supply their own data set.
  */
-object DatabaseProvider {
-    val dao: StringDao by lazy { InMemoryStringDao(StringSeedData.initialStrings) }
-}
 
 class InMemoryStringDao(
     initialData: List<StringEntity>

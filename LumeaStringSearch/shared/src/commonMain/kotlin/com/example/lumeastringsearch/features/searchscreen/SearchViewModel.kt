@@ -8,8 +8,6 @@ package com.example.lumeastringsearch.features.searchscreen
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.lumeastringsearch.data.StringRepositoryImpl
-import com.example.lumeastringsearch.data.local.DatabaseProvider
 import com.example.lumeastringsearch.features.searchscreen.domain.SearchStringsUseCase
 import com.example.lumeastringsearch.features.searchscreen.domain.model.StringItem
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -29,9 +27,7 @@ import kotlinx.coroutines.flow.stateIn
  */
 @OptIn(ExperimentalCoroutinesApi::class)
 class SearchViewModel(
-    private val searchStringsUseCase: SearchStringsUseCase = SearchStringsUseCase(
-        StringRepositoryImpl(DatabaseProvider.dao)
-    )
+    private val searchStringsUseCase: SearchStringsUseCase
 ) : ViewModel() {
 
     private val _query = MutableStateFlow("")
